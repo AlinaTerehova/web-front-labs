@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero with Speech Bubbles</title>
+<style>
+    .container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .speech-bubble {
+        position: absolute;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: 1px solid #555;
+        background-color: #f9f9f9;
+        color: #333;
+        visibility: hidden;
+        transition: visibility 0s, opacity 0.5s;
+    }
+
+    .container:hover .speech-bubble {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .bubble1 { top: 10px; left: 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
+    .bubble2 { top: 40px; left: 100px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
+    .bubble3 { top: 80px; left: 200px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
+    .bubble4 { top: 120px; left: 140px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
+    .bubble5 { top: 160px; left: 60px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
+
+    img {
+        display: block;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <img src="hero.jpg" alt="Hero">
+    <div class="speech-bubble bubble1">Hi there!</div>
+    <div class="speech-bubble bubble2">What's up?</div>
+    <div class="speech-bubble bubble3">Nice day, isn't it?</div>
+    <div class="speech-bubble bubble4">I'm a hero!</div>
+    <div class="speech-bubble bubble5">I save the day!</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Терехова Алина Сергеевна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="C:\Users\админ\Desktop\нгту\WEB\web-front-labs\favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="C:\Users\админ\Desktop\нгту\WEB\web-front-labs\favicon-32x32.png">
+    <link rel="'icon" href="C:\Users\админ\Desktop\нгту\WEB\web-front-labs\favicon-16x16.png">
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .speech-bubble {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid #555;
+            background-color: #f9f9f9;
+            color: #333;
+            box-shadow: 2px 2px 5px rgba(0,0,0,2);
+            visibility: hidden;
+            opacity: 0;
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium';
+        }
+        
+
+        .container:hover .speech-bubble {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        
+        .bubble1 { top: 270px; left: 550px; padding: 10px; transition: opacity 1s;}
+        .bubble2 { top: 260px; left: 578px; padding: 13px; transition: opacity 2s;}
+        .bubble3 { top: 250px; left: 610px; padding: 16px; transition: opacity 2.5s;}
+        .bubble4 { top: 235px; left: 645px; padding: 19px; transition: opacity 3s;}
+        .bubble5 { top: 190px; left: 690px; padding: 24px; transition: opacity 3.5s;}
+
+        
+
+       img {
+        display: block;
+        margin: auto;
+        padding: 20px;   
+       }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="container">
+            <img src="hero.jpg" height="500">
+            <div class="speech-bubble bubble1"></div>
+            <div class="speech-bubble bubble2"></div>
+            <div class="speech-bubble bubble3"></div>
+            <div class="speech-bubble bubble4"></div>
+            <div class="speech-bubble bubble5">THIS IS FINE</div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Алина Терехова, ФБИ-24, 2 курс, 2024
+    </footer>
