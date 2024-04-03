@@ -6,7 +6,6 @@ body {
 }
 
 main {
-    background-color: rgb(100, 202, 236);
     color: maroon;
     font-family: Arial;
     margin: 0px 20px 46px;
@@ -69,3 +68,4 @@ div.menu:hover {
     background-color: #ffffff30;
     box-shadow: 0 0 15px #00000030;
 }
+

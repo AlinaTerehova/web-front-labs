@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Терехова Алина Сергеевна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="C:\Users\админ\Desktop\нгту\WEB\web-front-labs\favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="C:\Users\админ\Desktop\нгту\WEB\web-front-labs\favicon-32x32.png">
+    <link rel="'icon" href="C:\Users\админ\Desktop\нгту\WEB\web-front-labs\favicon-16x16.png">
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center; 
+            background-color: white;
+            border: 1px dotted darkgreen;
+            margin: 15px;
+        }
+
+        .position-relative {
+            position: relative;
+            left: 140px;
+            top: -127px;   
+            z-index: -1; 
+        }
+
+        .position-relative:hover {
+            z-index: 1; 
+            box-shadow: 0 0 10px rgba(2, 0, 0, 0.5); 
+        }
+
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+        }
+
+        .position-absolute:hover {
+            transform: scale(1.1); 
+            background-color: rgb(151, 252, 159); 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
+            transition: 0.5s;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+
+    <footer>
+        &copy; Алина Терехова, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
