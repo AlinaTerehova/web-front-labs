@@ -17,18 +17,27 @@
             background-color: white;
             border: 1px dotted darkgreen;
             margin: 15px;
+            
+        }
+
+        .static {
+            position: relative;
+            z-index: 1;
         }
 
         .position-relative {
             position: relative;
             left: 140px;
             top: -127px;   
-            z-index: -1; 
+            z-index: 0; 
         }
 
         .position-relative:hover {
-            z-index: 1; 
-            box-shadow: 0 0 10px rgba(2, 0, 0, 0.5); 
+            position: relative;
+            z-index: 2; 
+            box-shadow: 0 0 10px rgba(2, 0, 0, 0.5);
+            
+         
         }
 
         .position-absolute {
@@ -51,8 +60,8 @@
     </header>
 
     <main>
-        <div>static</div>
-        <div>static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
         <div class="position-relative">relative</div>
         <div>static</div>
         <div>static</div>
