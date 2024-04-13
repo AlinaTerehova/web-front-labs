@@ -59,6 +59,13 @@
             alert(author);
         }
 
+        function changeOutput( buttonNum, backColor, textColor, px, borderColor) {
+            let output = document.getElementById('output');
+            output.innerHTML = "Нажата кнопка " + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = px + "px solid " + borderColor;
+        }
     </script>
     <style>
         header {
@@ -79,6 +86,13 @@
             padding: 16px;
             background-color: aliceblue;
         }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+            margin: 10px;
+        }
     </style>
 </head>
 
@@ -96,9 +110,18 @@
         <div class="massage" onclick="showMilt()">Найти произведение чисел</div>
         <div class="massage" onclick="showDiv()">Найти деление</div>
         <div class="massage"  onclick="showAuthor()">Узнать, кто автор страницы</div>
+    
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 5, 'black')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', 2, 'yellow')"> 
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'lightgreen', 'purple', 3, 'pink')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'pink', 'blue', 6, 'purple')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
-    <footer onclick="showWelcome()">
+    <footer ondblclick="showWelcome()">
         <hr>
         &copy; Алина Терехова, ФБИ-24, 2 курс, 2024</footer>
     </footer>
