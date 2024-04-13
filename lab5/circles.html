@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Терехова Алина Сергеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="S:\Alina-Terehova\web-front-labs\favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="S:\Alina-Terehova\web-front-labs\favicon-16x16.png">
+    <link rel="'icon" href="S:\Alina-Terehova\web-front-labs\favicon-32x32.png">
+    
+    <script>
+        window.onload = function() {
+          const circles = document.querySelectorAll('.circle');
+          const resetButton = document.getElementById('resetButton');
+      
+          circles.forEach(circle => {
+            circle.onclick = function() {
+              this.style.width = '0';
+              this.style.height = '0';
+              this.style.opacity = '0';
+              setTimeout(() => this.style.display = 'none', 600);
+            };
+          });
+      
+          resetButton.onclick = function() {
+            circles.forEach(circle => {
+              circle.style.display = 'inline-block';
+              circle.style.width = '100px';
+              circle.style.height = '100px';
+              circle.style.opacity = '1';
+            });
+          };
+        }; 
+      </script>
+    
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 30px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 50px;
+            color:whitesmoke;
+            transition: all 0.5s ease; /* добавляем анимацию */
+            cursor: pointer;
+            position: absolute; /* добавляем позиционирование */
+        }
+
+        button {
+            color:darkmagenta;
+            font-size: large;
+            margin: 20px;
+            border-radius: 15px;
+            border-color: darkmagenta; 
+            cursor: pointer;    
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+        <hr>
+    </header>
+    <main> 
+        <div class="circle" style="background-color: violet; top: 50px; left: 850px;">1</div>
+        <div class="circle" style="background-color: orchid; top: 150px; left: 720px;">2</div>
+        <div class="circle" style="background-color: fuchsia; top: 80px; left: 250px;">3</div>
+        <div class="circle" style="background-color: mediumvioletred; top: 250px; left: 450px;">4</div>
+        <div class="circle" style="background-color: purple; top: 62px; left: 450px;">5</div>
+        <div class="circle" style="background-color: blueviolet; top: 350px; left: 600px;">6</div>
+        <div class="circle" style="background-color: darkmagenta; top: 400px; left: 100px;">7</div>
+        <div class="circle" style="background-color: indigo; top: 300px; left: 205px;">8</div>
+        <div class="circle" style="background-color: indianred; top: 400px; left: 500px;">9</div>
+        <div class="circle" style="background-color: darkorchid; top: 300px; left: 950px;">10</div>
+
+        <button id="resetButton">Повтор</button>
+        
+    </main>
+    
+<footer>
+    <hr>
+    &copy; Алина Терехова, ФБИ-24, 2 курс, 2024</footer>
+</footer>
+</body>
+</html>

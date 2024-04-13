@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Терехова Алина Сергеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="S:\Alina-Terehova\web-front-labs\favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="S:\Alina-Terehova\web-front-labs\favicon-16x16.png">
+    <link rel="'icon" href="S:\Alina-Terehova\web-front-labs\favicon-32x32.png">
+    <script>
+        function showSum() {
+            let inputA = document.getElementById("numberA");
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a + b;
+            alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+        function showDiff() {
+            let inputA = document.getElementById("numberA");
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+        function showMilt() {
+            let inputA = document.getElementById("numberA");
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произвдение ' + a + ' и ' + b + ' равно ' + result);
+        }
+
+        function showDiv() {
+            let inputA = document.getElementById("numberA");
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Деление ' + a + ' на ' + b + ' равно ' + result);
+        }
+
+        function showAuthor() {
+            let author = "Автор страницы: \nТерехова Алина Сергеевна";
+            alert(author);
+        }
+
+        function showWelcome() {
+            let author = "Привет! \nТы хочешь спать? \nЯ тоже!";
+            alert(author);
+        }
+
+        function changeOutput( buttonNum, backColor, textColor, px, borderColor) {
+            let output = document.getElementById('output');
+            output.innerHTML = "Нажата кнопка " + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = px + "px solid " + borderColor;
+        }
+    </script>
+    <style>
+        header {
+            cursor: pointer;
+        }
+
+        footer {
+            cursor: pointer;
+        }
+        .massage {
+            cursor:pointer;
+            width: 250px;
+            height: 20px;
+            border: 1px solid;
+            display: inline-block;
+            margin: 20px;
+            border-radius: 7px;
+            padding: 16px;
+            background-color: aliceblue;
+        }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
+        <hr>
+    </header>
+
+    <main>
+        <label>Первое число: <input type ="number" value="5154" id="numberA"></label><br> 
+        <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        <div class="massage" onclick="showSum()">Найти сумму чисел</div>
+        <div class="massage" onclick="showDiff()">Найти разность чисел</div>
+        <div class="massage" onclick="showMilt()">Найти произведение чисел</div>
+        <div class="massage" onclick="showDiv()">Найти деление</div>
+        <div class="massage"  onclick="showAuthor()">Узнать, кто автор страницы</div>
+    
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 5, 'black')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', 2, 'yellow')"> 
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'lightgreen', 'purple', 3, 'pink')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'pink', 'blue', 6, 'purple')">
+        </div>
+
+        <div id="output"></div>
+    </main>
+
+    <footer ondblclick="showWelcome()">
+        <hr>
+        &copy; Алина Терехова, ФБИ-24, 2 курс, 2024</footer>
+    </footer>
+</body>
+</html>
