@@ -10,10 +10,10 @@
     <link rel="'icon" href="S:\Alina-Terehova\web-front-labs\favicon-32x32.png">
     <script>
         function showSum() {
-            var a = parseInt(document.getElementById("Apple").value);
-            var b = parseInt(document.getElementById("Pear").value);
-            var c = parseInt(document.getElementById("Orange").value);
-            var d = parseInt(document.getElementById("Banana").value);
+            var a = parseInt(document.getElementById("Apple").value)|| 0;
+            var b = parseInt(document.getElementById("Pear").value) || 0;
+            var c = parseInt(document.getElementById("Orange").value) || 0;
+            var d = parseInt(document.getElementById("Banana").value) || 0  ;
             
             var result = a*100 + b*120 + c*200 + d*220;
             document.getElementById('output').innerHTML = 'Сумма к оплате: ' + result + " руб.";
@@ -44,7 +44,7 @@
         #output {
             border: 1px solid;
             width: 140px;
-            height: 20px;
+            height:30px;
             margin: 7px;
         }
     </style>
