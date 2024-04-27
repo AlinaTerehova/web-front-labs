@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Терехова Алина Сергеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="S:\Alina-Terehova\web-front-labs\favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="S:\Alina-Terehova\web-front-labs\favicon-16x16.png">
+    <link rel="'icon" href="S:\Alina-Terehova\web-front-labs\favicon-32x32.png">
+    <style>
+        .color {
+            display:block;
+            border: 1px solid;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            border-radius: 7px;
+            padding: 7px;
+            text-align: center;
+            background-color: yellow;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        
+    </style>
+    <script> 
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'white'
+                document.getElementById('color-name').innerHTML = "красный"
+            }
+            else if(div.style.backgroundColor=='red' ) {
+                div.style.backgroundColor = 'black';
+                div.style.color = 'white'
+                document.getElementById('color-name').innerHTML = "черный"
+            }
+            else if(div.style.backgroundColor=='black' ) {
+                div.style.backgroundColor = 'blue';
+                document.getElementById('color-name').innerHTML = "синий"
+            }
+            else if(div.style.backgroundColor=='blue' ) {
+                div.style.backgroundColor = 'white';
+                div.style.color = 'black'
+                document.getElementById('color-name').innerHTML = "белый"
+            }
+            else if(div.style.backgroundColor=='white' ) {
+                div.style.backgroundColor = 'purple';
+                div.style.color = 'white'
+                document.getElementById('color-name').innerHTML = "фиолетовый"
+            }
+            else if(div.style.backgroundColor=='purple' ) {
+                div.style.backgroundColor = 'pink';
+                div.style.color = 'red'
+                document.getElementById('color-name').innerHTML = "розовый"
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                document.getElementById('color-name').innerHTML = "желтый"
+            }
+        }
+      
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+        <hr>
+    </header>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id = color-name>желтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Алина Терехова, ФБИ-24, 2 курс, 2024</footer>
+    </footer>
+</body>
+</html>

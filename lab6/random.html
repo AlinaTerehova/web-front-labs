@@ -17,11 +17,10 @@
             margin-right: auto;
             margin-top: 20px;
             border-radius: 7px;
-            padding: 7px;
+            padding: 30px;
             background-color: aliceblue;
             box-shadow: 2px 2px 10px rebeccapurple;
             text-align: center;
-            padding: 30px;
         }
         .rules {
             display:block;
@@ -31,7 +30,6 @@
             margin-right: auto;
             margin-top: 20px;
             border-radius: 7px;
-            padding: 2px;
             background-color: aliceblue;
             box-shadow: 2px 2px 10px rebeccapurple;
             text-align: left;
@@ -49,31 +47,30 @@
         }
 
         function guess() {
-            count++;
             let input = document.getElementById('user-number');
             let userNumber = parseInt (input.value); 
             let message = document.getElementById('result');
-            if (userNumber === '' || isNaN(userNumber) || userNumber > 100 || userNumber < 1) {
+            if ( isNaN(userNumber) || userNumber > 100 || userNumber < 1) {
                 message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
                 return;
             }
-            
+            count++;
+
+            if (userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            } 
+            else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            } 
             else {
-                if (userNumber > number) {
-                    message.innerHTML = 'Вы ввели слишком большое число';
-                } 
-                else if (userNumber < number) {
-                    message.innerHTML = 'Вы ввели слишком маленькое число';
-                } 
-                else {
-                    let screens = document.getElementsByClassName('game');
-                    screens[1].style.display = 'none';
-                    screens[2].style.display = 'block';
-                    document.getElementById('number').innerHTML = number;
-                    document.getElementById('try-count').innerHTML = count;
-                }
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
             }
         }
+        
 
         function again(params) {
             number = Math.floor(Math.random() * 100) + 1;
