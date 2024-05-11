@@ -87,8 +87,31 @@
                 newBlock.style.textAlign = 'center';
                 newBlock.style.lineHeight = '40px'
                 newBlock.style.verticalAlign = 'middle';
-                newBlock.style.display = 'inline-block';
+            
                 
+
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function transparency() {
+            let main = document.querySelector('main');
+            for (let i =1; i<=10; i ++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '100px';
+                newBlock.style.border = '1px solid';
+                newBlock.style.backgroundColor = 'greenyellow';
+                newBlock.style.color = 'darkgreen';
+                newBlock.style.height = '40px';
+                newBlock.style.borderRadius = '20px';
+                newBlock.style.margin = '10px';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.lineHeight = '40px'
+                newBlock.style.verticalAlign = 'middle';
+                newBlock.style.opacity = i * 0.1;
+                newBlock.style.innerHTML = i ;
 
                 newBlock.innerHTML = `${i}`;
 
@@ -116,6 +139,7 @@
 
             <button onclick="add20_50()">20 => 50</button>
             <button onclick="add10_min80()">10 => -80</button>
+            <button onclick="transparency()">Прозрачность</button>
         </div>
     </main>
     
