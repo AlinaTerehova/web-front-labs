@@ -63,8 +63,32 @@
                 newBlock.style.borderRadius = '10px';
                 newBlock.style.margin = '10px';
                 newBlock.style.textAlign = 'center'
+                newBlock.style.lineHeight = '40px'
                 newBlock.style.verticalAlign = 'middle';
-                newBlock.style.paddingTop = '15px'
+            
+
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function add10_min80() {
+            let main = document.querySelector('main');
+            for (let i =10; i>=-80; i -=3) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '40px';
+                newBlock.style.border = '1px solid';
+                newBlock.style.backgroundColor = 'black';
+                newBlock.style.color = 'yellow';
+                newBlock.style.height = '40px';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.margin = '10px';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.lineHeight = '40px'
+                newBlock.style.verticalAlign = 'middle';
+                newBlock.style.display = 'inline-block';
+                
 
                 newBlock.innerHTML = `${i}`;
 
@@ -84,12 +108,15 @@
     </header>
 
     <main>
-        <button onclick="addNewBlock()" >Добавить блок</button>
+        <div class="buttons">
+            <button onclick="addNewBlock()" >Добавить блок</button>
 
-        <input type="number" id="blockCount" min="1"  max = '10' value="10">
-        <button onclick="addNewBlocks()">Добавить блоки</button>
+            <input type="number" id="blockCount" min="1"  max = '10' value="10">
+            <button onclick="addNewBlocks()">Добавить блоки</button>
 
-        <button onclick="add20_50()">20 => 50</button>
+            <button onclick="add20_50()">20 => 50</button>
+            <button onclick="add10_min80()">10 => -80</button>
+        </div>
     </main>
     
 
