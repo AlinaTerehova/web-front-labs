@@ -43,7 +43,7 @@
                 newBlock.style.borderRadius = '10px';
                 newBlock.style.margin = '10px';
                 newBlock.style.textAlign = 'center'
-                newBlock.style.verticalAlign = 'middle';
+         
                 newBlock.style.paddingTop = '15px'
                 newBlock.innerHTML = `Блок № ${i}: 2*${i}<sup>2</sup> = ${2 * i ** 2}`;
 
@@ -64,7 +64,7 @@
                 newBlock.style.margin = '10px';
                 newBlock.style.textAlign = 'center'
                 newBlock.style.lineHeight = '40px'
-                newBlock.style.verticalAlign = 'middle';
+
             
 
                 newBlock.innerHTML = `${i}`;
@@ -86,7 +86,7 @@
                 newBlock.style.margin = '10px';
                 newBlock.style.textAlign = 'center';
                 newBlock.style.lineHeight = '40px'
-                newBlock.style.verticalAlign = 'middle';
+
             
                 
 
@@ -109,7 +109,6 @@
                 newBlock.style.margin = '10px';
                 newBlock.style.textAlign = 'center';
                 newBlock.style.lineHeight = '40px'
-                newBlock.style.verticalAlign = 'middle';
                 newBlock.style.opacity = i * 0.1;
                 newBlock.style.innerHTML = i ;
 
@@ -119,6 +118,74 @@
             }
         }
 
+        function ColorfulCirooocles() {
+            let main = document.querySelector('main');
+            
+            let input = document.createElement('input');
+            input.type = 'number';
+            input.placeholder = 'Enter number of circles';
+            
+            let button = document.createElement('button');
+            button.textContent = 'Colorful Circles';
+            button.addEventListener('click', function() {
+                let numCircles = parseInt(input.value);
+                
+                for (let i = numCircles; i >= 1; i--) {
+                    let circle = document.createElement('div');
+                    circle.style.width = '40px';
+                    circle.style.height = '40px';
+                    circle.style.borderRadius = '50%';
+                    circle.style.lineHeight = '40px';
+                    circle.style.textAlign = 'center';
+                    circle.style.display = 'inline-block';
+                    circle.style.margin = '5px';
+                    circle.textContent = i;
+                    
+                    if (i % 2 === 0) {
+                        circle.style.backgroundColor = 'green';
+                    } else {
+                        circle.style.backgroundColor = 'red';
+                    }
+
+                    main.appendChild(circle);
+                }
+            });
+            
+            main.appendChild(input);
+            main.appendChild(button);
+        }
+
+
+        function ColorfulCircles() {
+            let main = document.querySelector('main');
+            let input = document.querySelector('#blockCountcolor');
+            let blockCount = parseInt(input.value);
+
+            for (let i = blockCount; i >= 1; i--) {
+                let circle = document.createElement('div');
+            
+                circle.style.color = 'white';
+                circle.style.height = '60px';
+                circle.style.width = '60px'; 
+                circle.style.border = '2px solid white';
+                circle.style.borderRadius = '50%';
+                circle.style.margin = '10px';
+                circle.style.textAlign = 'center'
+                circle.style.lineHeight = '60px';
+                circle.innerHTML = i;
+                circle.style.display = 'inline-block';
+
+                if (i % 2 === 0) {
+                        circle.style.backgroundColor = 'hotpink';
+                    } else {
+                        circle.style.backgroundColor = 'red';
+                    }
+
+                    main.appendChild(circle);
+                }            
+            }
+        
+        
 
     </script>
 
@@ -140,6 +207,9 @@
             <button onclick="add20_50()">20 => 50</button>
             <button onclick="add10_min80()">10 => -80</button>
             <button onclick="transparency()">Прозрачность</button>
+
+            <input type="number" id="blockCountcolor" min="1"  value="1">
+            <button onclick="ColorfulCircles()">Цветные круги</button>
         </div>
     </main>
     
