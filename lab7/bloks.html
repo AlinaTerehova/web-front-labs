@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Терехова Алина Сергеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="../favicon-16x16.png">
+    <link rel="'icon" href="../favicon-32x32.png">
+    <style>
+        button {
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'white';
+            newBlock.style.height = '40px';
+            newBlock.style.border = '2px solid pink';
+            newBlock.style.borderRadius = '10px';
+            newBlock.style.margin = '10px'
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+
+
+
+        function addNewBlocks() {
+            let main = document.querySelector('main');
+            let input = document.querySelector('#blockCount');
+            let blockCount = parseInt(input.value);
+
+            for (let i = 1; i <= blockCount; i++) {
+                let newBlock = document.createElement('div');
+                let width = i * 100; // Вычисляем ширину блока
+
+                newBlock.style.backgroundColor = 'white';
+                newBlock.style.height = '40px';
+                newBlock.style.width = width + 'px'; // Устанавливаем ширину блока
+                newBlock.style.border = '2px solid pink';
+                newBlock.style.borderRadius = '10px';
+                newBlock.style.margin = '10px';
+                newBlock.style.textAlign = 'center'
+         
+                newBlock.style.paddingTop = '15px'
+                newBlock.innerHTML = `Блок № ${i}: 2*${i}<sup>2</sup> = ${2 * i ** 2}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function add20_50() {
+            let main = document.querySelector('main');
+            for (let i =20; i<=50; i +=2.5) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '400px';
+                newBlock.style.border = '1px solid white';
+                newBlock.style.backgroundColor = 'violet';
+                newBlock.style.color = 'white';
+                newBlock.style.height = '40px';
+                newBlock.style.borderRadius = '10px';
+                newBlock.style.margin = '10px';
+                newBlock.style.textAlign = 'center'
+                newBlock.style.lineHeight = '40px'
+
+            
+
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function add10_min80() {
+            let main = document.querySelector('main');
+            for (let i =10; i>=-80; i -=3) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '40px';
+                newBlock.style.border = '1px solid';
+                newBlock.style.backgroundColor = 'black';
+                newBlock.style.color = 'yellow';
+                newBlock.style.height = '40px';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.margin = '10px';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.lineHeight = '40px'
+
+            
+                
+
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function transparency() {
+            let main = document.querySelector('main');
+            for (let i =1; i<=10; i ++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '100px';
+                newBlock.style.border = '1px solid';
+                newBlock.style.backgroundColor = 'greenyellow';
+                newBlock.style.color = 'darkgreen';
+                newBlock.style.height = '40px';
+                newBlock.style.borderRadius = '20px';
+                newBlock.style.margin = '10px';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.lineHeight = '40px'
+                newBlock.style.opacity = i * 0.1;
+                newBlock.style.innerHTML = i ;
+
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function ColorfulCirooocles() {
+            let main = document.querySelector('main');
+            
+            let input = document.createElement('input');
+            input.type = 'number';
+            input.placeholder = 'Enter number of circles';
+            
+            let button = document.createElement('button');
+            button.textContent = 'Colorful Circles';
+            button.addEventListener('click', function() {
+                let numCircles = parseInt(input.value);
+                
+                for (let i = numCircles; i >= 1; i--) {
+                    let circle = document.createElement('div');
+                    circle.style.width = '40px';
+                    circle.style.height = '40px';
+                    circle.style.borderRadius = '50%';
+                    circle.style.lineHeight = '40px';
+                    circle.style.textAlign = 'center';
+                    circle.style.display = 'inline-block';
+                    circle.style.margin = '5px';
+                    circle.textContent = i;
+                    
+                    if (i % 2 === 0) {
+                        circle.style.backgroundColor = 'green';
+                    } else {
+                        circle.style.backgroundColor = 'red';
+                    }
+
+                    main.appendChild(circle);
+                }
+            });
+            
+            main.appendChild(input);
+            main.appendChild(button);
+        }
+
+
+        function ColorfulCircles() {
+            let main = document.querySelector('main');
+            let input = document.querySelector('#blockCountcolor');
+            let blockCount = parseInt(input.value);
+
+            for (let i = blockCount; i >= 1; i--) {
+                let circle = document.createElement('div');
+            
+                circle.style.color = 'white';
+                circle.style.height = '60px';
+                circle.style.width = '60px'; 
+                circle.style.border = '2px solid white';
+                circle.style.borderRadius = '50%';
+                circle.style.margin = '10px';
+                circle.style.textAlign = 'center'
+                circle.style.lineHeight = '60px';
+                circle.innerHTML = i;
+                circle.style.display = 'inline-block';
+
+                if (i % 2 === 0) {
+                        circle.style.backgroundColor = 'hotpink';
+                    } else {
+                        circle.style.backgroundColor = 'red';
+                    }
+
+                    main.appendChild(circle);
+                }            
+            }
+        
+        
+
+    </script>
+
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+
+    <main>
+        <div class="buttons">
+            <button onclick="addNewBlock()" >Добавить блок</button>
+
+            <input type="number" id="blockCount" min="1"  max = '10' value="10">
+            <button onclick="addNewBlocks()">Добавить блоки</button>
+
+            <button onclick="add20_50()">20 => 50</button>
+            <button onclick="add10_min80()">10 => -80</button>
+            <button onclick="transparency()">Прозрачность</button>
+
+            <input type="number" id="blockCountcolor" min="1"  value="1">
+            <button onclick="ColorfulCircles()">Цветные круги</button>
+        </div>
+    </main>
+    
+
+    <footer>
+        <hr>
+        &copy; Алина Терехова, ФБИ-24, 2 курс, 2024</footer>
+    </footer>
+</body>
+</html>
