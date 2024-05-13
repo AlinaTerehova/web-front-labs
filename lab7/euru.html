@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Терехова Алина Сергеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="../favicon-16x16.png">
+    <link rel="'icon" href="../favicon-32x32.png">
+
+    <style>
+        div {
+            background-color: aliceblue;
+            border-radius: 10px;
+            border: 2px solid ;
+            margin: 10px;
+            width: 30%;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        function getEuroExchangeRate() {
+        const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (json) {
+                const euroInfoDiv = document.getElementById('euro-info');
+                const date = new Date(json.Date);
+                const prevDate = new Date(date.getTime() - (24 * 60 * 60 * 1000)); // Вычисляем дату за прошлый день
+
+                const currentRate = json.Valute.EUR.Value.toFixed(2);
+                const prevRate = json.Valute.EUR.Previous.toFixed(2);
+                const difference = currentRate - prevRate;
+                const differenceMessage = difference > 0 ? 'Курс поднялся' : 'Курс опустился';
+
+                euroInfoDiv.innerHTML = `
+                    <p>Текущий курс евро: ${currentRate}</p>
+                    <p>Дата запроса: ${date.toLocaleDateString()}</p>
+                    <p>Курс за прошлую дату (${prevDate.toLocaleDateString()}): ${prevRate}</p>
+                    <p>${differenceMessage}: ${Math.abs(difference).toFixed(2)}</p>
+                    <p>Источник данных: <a href="https://www.cbr-xml-daily.ru/" target="_blank">Центральный Банк России</a></p>
+                `;
+            })
+            .catch(function (error) {
+                console.error('Ошибка при получении курса евро:', error);
+            });
+    }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+
+    <main>
+       <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+       <div id="euro-info" ></div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Алина Терехова, ФБИ-24, 2 курс, 2024</footer>
+    </footer>
+</body>
+</html>
