@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Терехова Алина Сергеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="../favicon-16x16.png">
+    <link rel="'icon" href="../favicon-32x32.png">
+
+    <style>
+        h3, button, div {
+            margin: 10px;
+        }
+
+        div {
+            background-color: aliceblue;
+            border-radius: 10px;
+            border: 2px solid ;
+            width: 30%;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        function getWeatherForecast() {
+          const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+    
+          fetch(url)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (json) {
+              const timeArray = json.hourly.time;
+              const tempArray = json.hourly.temperature_2m;
+    
+              const weatherInfoDiv = document.getElementById('weather-info');
+              const today = new Date().toISOString().slice(0, 10); // Текущая дата в формате "YYYY-MM-DD"
+              const currentDateText = `Сегодня: ${new Date().toLocaleDateString()}`;
+    
+              let infoText = '';
+              for (let i = 0; i < timeArray.length; i++) {
+                const time = new Date(timeArray[i]);
+                const temperature = tempArray[i];
+                const date = time.toISOString().slice(0, 10); // Дата из временной точки в формате "YYYY-MM-DD"
+    
+                if (date === today && (time.getHours() === 8 || time.getHours() === 12 || time.getHours() === 20)) {
+                  infoText += `Время: ${time.toLocaleTimeString()}, Температура: ${temperature} °C<br>`;
+                }
+              }
+    
+              weatherInfoDiv.innerHTML = `${currentDateText}<br>${infoText}`;
+            })
+            .catch(error => {
+              console.error('Ошибка при получении прогноза погоды:', error);
+            });
+        }
+      </script>
+
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+
+    <main>
+        <h3>Прогноз погоды в Новосибирске</h3>
+        <button onclick="getWeatherForecast()">Получить прогноз погоды</button>
+        <div id="weather-info"></div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Алина Терехова, ФБИ-24, 2 курс, 2024</footer>
+    </footer>
+</body>
+</html>
