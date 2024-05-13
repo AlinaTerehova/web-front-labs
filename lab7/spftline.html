@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Котирование акций компании Softline</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="../favicon-16x16.png">
+    <link rel="'icon" href="../favicon-32x32.png">
+    <style>
+    table, button {
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function showStocks() {
+        const stocks = [
+            184.70, 183.00, 182.50, 182.36, 177.88,
+            179.62, 179.46, 179.16, 168.34, 165.22
+        ];
+
+        const dates = [
+            '10.05.2024', '08.05.2024', '07.05.2024', '06.05.2024', '03.05.2024',
+            '02.05.2024', '30.04.2024', '29.04.2024', '27.04.2024', '26.04.2024'
+        ];
+
+        let table = document.getElementById('stock-table');
+
+        let headerRow = table.insertRow();
+        let dateHeader = headerRow.insertCell();
+        dateHeader.innerText = 'Дата';
+        let priceHeader = headerRow.insertCell();
+        priceHeader.innerText = 'Цена акций';
+        let diffHeader = headerRow.insertCell();
+        diffHeader.innerText = 'Разница';
+
+        let sum = 0;
+        let maxPrice = Number.MIN_VALUE;
+        let minPrice = Number.MAX_VALUE;
+
+        for (let i = 0; i < stocks.length; i++) {
+            let tr = table.insertRow();
+            let dateCell = tr.insertCell();
+            dateCell.innerText = dates[i];
+            let priceCell = tr.insertCell();
+            priceCell.innerText = stocks[i];
+
+       
+            let diffCell = tr.insertCell();
+            if (i === 0) {
+                diffCell.innerText = '-';
+            } else {
+                let diff = stocks[i] - stocks[i - 1];
+                diffCell.innerText = diff.toFixed(2);
+            }
+
+
+            sum += stocks[i];
+            if (stocks[i] > maxPrice) {
+                maxPrice = stocks[i];
+            }
+            if (stocks[i] < minPrice) {
+                minPrice = stocks[i];
+            }
+            }
+
+            let average = sum / stocks.length;
+            average = average.toFixed(2);
+            let detailDiv = document.getElementById('stock-detail');
+            detailDiv.innerHTML = `
+                <p>Средняя стоимость акции: ${average}</p>
+                <p>Максимальная стоимость акции: ${maxPrice}</p>
+                <p>Минимальная стоимость акции: ${minPrice}</p>
+            `;
+
+
+    }
+
+
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+
+    <main>
+        <button onclick="showStocks()">Курс акций компании Softline</button>
+        <table border='1' id="stock-table"></table>
+        <div id="stock-detail"></div>
+
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Алина Терехова, ФБИ-24, 2 курс, 2024</footer>
+    </footer>
+</body>
+</html>
