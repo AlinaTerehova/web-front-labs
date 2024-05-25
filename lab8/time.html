@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Терехова Алина Сергеевна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="'icon" href="../favicon-16x16.png">
+    <link rel="'icon" href="../favicon-32x32.png">
+    <script src="time.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px); 
+            text-align: center;
+        }
+
+        .time_header {
+            text-align: right;
+            background-color: rgba(217, 239, 247, 0.507);
+            border-radius: 30px;
+            margin-left: 93%;
+            padding: 5px;
+        }
+
+        .time_body {
+            font-size: 50px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body onload="showFullTime(); showSeconds();">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <div class="time_header" id="time-header">00:00:00</div>
+        <hr>
+    </header>
+
+    <main>
+        <div class="time_body" id="time-body">00</div>
+        <div id="time"></div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Алина Терехова, ФБИ-24, 2 курс, 2024</footer>
+    </footer>
+</body>
+</html>
