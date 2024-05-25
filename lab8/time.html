@@ -34,6 +34,31 @@
             font-size: 50px;
             color: blueviolet;
         }
+
+        .clock {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 5px solid rgb(255, 0, 225);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+
+        #second-hand {
+            width: 5px;
+            height: 90px;
+            background: rgb(255, 0, 225);
+            position: absolute;
+            bottom: 50%;
+            transform-origin: bottom;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        
     </style>
 </head>
 
@@ -47,6 +72,9 @@
     <main>
         <div class="time_body" id="time-body">00</div>
         <div id="time"></div>
+        <div class="clock">
+            <div id="second-hand"></div>
+        </div>
     </main>
 
     <footer>
